@@ -1,0 +1,252 @@
+ [
+  {
+  "id":"942",
+  "name":"2004\u6b3e 300",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.0L 223\u9a6c\u529b L6",
+  "onsale":"0",
+  "publishedYear":"2004-01-01",
+  "transmissionType":"5\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"1543",
+  "name":"2005\u6b3e 300 \u6807\u51c6\u578b",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.0L 231\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2005-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"1544",
+  "name":"2005\u6b3e 300",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.0L 231\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2005-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"1545",
+  "name":"2005\u6b3e 430",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"4.3L 283\u9a6c\u529b V8",
+  "onsale":"0",
+  "publishedYear":"2005-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"4630",
+  "name":"2008\u6b3e 460",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"4.6L 326\u9a6c\u529b V8",
+  "onsale":"0",
+  "publishedYear":"2008-01-01",
+  "transmissionType":"CVT\u65e0\u7ea7\u53d8\u901f(\u6a21\u62df8\u6321)",
+  "seriesId":"261"
+  },
+  {
+  "id":"4788",
+  "name":"2009\u6b3e 450h",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.5L 296\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2009-01-01",
+  "transmissionType":"CVT\u65e0\u7ea7\u53d8\u901f",
+  "seriesId":"261"
+  },
+  {
+  "id":"5003",
+  "name":"2008\u6b3e 300",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.0L 231\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2008-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"6139",
+  "name":"2010\u6b3e 450h",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.5L 296\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2010-01-01",
+  "transmissionType":"CVT\u65e0\u7ea7\u53d8\u901f",
+  "seriesId":"261"
+  },
+  {
+  "id":"6154",
+  "name":"2010\u6b3e 300",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.0L 231\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2010-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"6179",
+  "name":"2010\u6b3e 460",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"4.6L 326\u9a6c\u529b V8",
+  "onsale":"0",
+  "publishedYear":"2010-01-01",
+  "transmissionType":"CVT\u65e0\u7ea7\u53d8\u901f(\u6a21\u62df8\u6321)",
+  "seriesId":"261"
+  },
+  {
+  "id":"9243",
+  "name":"2011\u6b3e 300 \u8f89\u714c\u7248",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.0L 231\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2011-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"10648",
+  "name":"2012\u6b3e 350 \u8c6a\u534e\u5168\u9a71\u7248",
+  "driveType":"\u524d\u7f6e\u56db\u9a71",
+  "engine":"3.5L 317\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2012-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"10865",
+  "name":"2012\u6b3e 450h",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.5L 292\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2012-01-01",
+  "transmissionType":"CVT\u65e0\u7ea7\u53d8\u901f",
+  "seriesId":"261"
+  },
+  {
+  "id":"11188",
+  "name":"2012\u6b3e 350 F SPORT",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.5L 317\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2012-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"12479",
+  "name":"2012\u6b3e 250 \u9886\u5148\u7248",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"2.5L 209\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2012-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"12480",
+  "name":"2012\u6b3e 250 F SPORT",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"2.5L 209\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2012-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"12481",
+  "name":"2012\u6b3e 250 \u8c6a\u534e\u7248",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"2.5L 209\u9a6c\u529b V6",
+  "onsale":"0",
+  "publishedYear":"2012-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"15823",
+  "name":"2014\u6b3e 300h \u9886\u5148\u7248",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"2.5\u5347 181\u9a6c\u529b",
+  "onsale":"1",
+  "publishedYear":"2014-01-01",
+  "transmissionType":"CVT\u65e0\u7ea7\u53d8\u901f",
+  "seriesId":"261"
+  },
+  {
+  "id":"17021",
+  "name":"2014\u6b3e 250 \u9886\u5148\u7248",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"2.5\u5347 209\u9a6c\u529b",
+  "onsale":"1",
+  "publishedYear":"2014-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"17024",
+  "name":"2014\u6b3e 250 F SPORT",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"2.5\u5347 209\u9a6c\u529b",
+  "onsale":"1",
+  "publishedYear":"2014-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"17026",
+  "name":"2014\u6b3e 250 \u8c6a\u534e\u7248",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"2.5\u5347 209\u9a6c\u529b",
+  "onsale":"1",
+  "publishedYear":"2014-01-01",
+  "transmissionType":"6\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"17028",
+  "name":"2014\u6b3e 350 F SPORT",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.5\u5347 317\u9a6c\u529b",
+  "onsale":"1",
+  "publishedYear":"2014-01-01",
+  "transmissionType":"8\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"17029",
+  "name":"2014\u6b3e 350 \u8c6a\u534e\u5168\u9a71\u7248",
+  "driveType":"\u524d\u7f6e\u56db\u9a71",
+  "engine":"3.5\u5347 317\u9a6c\u529b",
+  "onsale":"1",
+  "publishedYear":"2014-01-01",
+  "transmissionType":"8\u6321\u624b\u81ea\u4e00\u4f53",
+  "seriesId":"261"
+  },
+  {
+  "id":"17030",
+  "name":"2014\u6b3e 450h",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"3.5\u5347 292\u9a6c\u529b",
+  "onsale":"1",
+  "publishedYear":"2014-01-01",
+  "transmissionType":"CVT\u65e0\u7ea7\u53d8\u901f",
+  "seriesId":"261"
+  },
+  {
+  "id":"17777",
+  "name":"2014\u6b3e 300h \u8c6a\u534e\u7248",
+  "driveType":"\u524d\u7f6e\u540e\u9a71",
+  "engine":"2.5\u5347 181\u9a6c\u529b",
+  "onsale":"1",
+  "publishedYear":"2014-01-01",
+  "transmissionType":"CVT\u65e0\u7ea7\u53d8\u901f",
+  "seriesId":"261"
+  }
+  ]

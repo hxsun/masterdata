@@ -8,6 +8,7 @@
 
 #import "Brands.h"
 #import "Series.h"
+#import "Models.h"
 
 
 static NSManagedObjectModel *managedObjectModel()
@@ -166,6 +167,50 @@ static void prepareSeries(NSManagedObjectContext *context) {
     }];
 }
 
+static void prepareModels(NSManagedObjectContext *context) {
+    DLog(@"Deleting all records in MODELS...");
+    
+    deleteAllObjects(@"Models", context);
+    NSError *error = nil;
+    if (![context save:&error]) {
+        DLog(@"Error while saving %@", ([error localizedDescription] != nil) ? [error localizedDescription] : @"Unknown Error");
+    }
+    
+    NSError *err = nil;
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"models" ofType:@"json"];
+    NSArray *models = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath] options:kNilOptions error:&err];
+    DLog(@"Importing models: %@", models);
+    [models enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        Models *model = [NSEntityDescription insertNewObjectForEntityForName:@"Models" inManagedObjectContext:context];
+        model.id = [NSNumber numberWithInteger:[[obj objectForKey:@"id"] integerValue]];
+        model.name = [obj objectForKey:@"name"];
+        model.engine = [obj objectForKey:@"engine"];
+        model.driveType = [obj objectForKey:@"driveType"];
+        model.onsale = [NSNumber numberWithBool:[[obj objectForKey:@"onsale"] boolValue]];
+        model.publishedYear = [NSDate dateWithString:[obj objectForKey:@"publishedYear"]];
+        model.transmissionType = [obj objectForKey:@"transmissionType"];
+        
+        // NSInteger seriesId = [[obj objectForKey:@"seriesId"] integerValue];
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@",@"id", [obj objectForKey:@"seriesId"]];
+        
+        NSFetchRequest *request = [NSFetchRequest new];
+        [request setPredicate:predicate];
+        NSEntityDescription *seriesDesc = [NSEntityDescription entityForName:@"Series" inManagedObjectContext:context];
+        [request setEntity:seriesDesc];
+        
+        Series *series = [[context executeFetchRequest:request error:nil] firstObject];
+        DLog(@"%@ makes %@", series.name, model.name);
+        model.series = series;
+        NSError *error;
+        if (![context save:&error]) {
+            DLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        
+    }];
+
+}
+
 
 int main(int argc, const char * argv[])
 {
@@ -179,6 +224,8 @@ int main(int argc, const char * argv[])
         prepareBrands(context);
         
         prepareSeries(context);
+        
+        prepareModels(context);
         
         /*
         NSError *reseterror = nil;

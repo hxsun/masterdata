@@ -21,6 +21,7 @@
 		9F5DC9F319B0AB51007AF905 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5DC9F219B0AB51007AF905 /* main.m */; };
 		9F5DC9FA19B0AB51007AF905 /* MasterData.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9F5DC9F919B0AB51007AF905 /* MasterData.1 */; };
 		9F5DCA6519B1ACBF007AF905 /* brands.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9F5DCA6219B1AC2A007AF905 /* brands.json */; };
+		9FF2641619B6F77600279DFA /* models.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FF2641519B6F6A400279DFA /* models.json */; };
 		E17423FDA8354D3587D083B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AE20243FDB44BCA9A1C0F6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				9FF2641619B6F77600279DFA /* models.json in CopyFiles */,
 				9F2941A719B47DF900D68CF7 /* series.json in CopyFiles */,
 				9F5DCA6519B1ACBF007AF905 /* brands.json in CopyFiles */,
 			);
@@ -74,6 +76,8 @@
 		9F5DC9F519B0AB51007AF905 /* MasterData-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MasterData-Prefix.pch"; sourceTree = "<group>"; };
 		9F5DC9F919B0AB51007AF905 /* MasterData.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MasterData.1; sourceTree = "<group>"; };
 		9F5DCA6219B1AC2A007AF905 /* brands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = brands.json; path = ../brands.json; sourceTree = "<group>"; };
+		9FB2C97519B57C980034631A /* schema.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.sql; sourceTree = "<group>"; };
+		9FF2641519B6F6A400279DFA /* models.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = models.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +125,10 @@
 		9F5DC9F119B0AB51007AF905 /* MasterData */ = {
 			isa = PBXGroup;
 			children = (
+				9FB2C97419B57C1B0034631A /* Database Files */,
 				9F5DCA6219B1AC2A007AF905 /* brands.json */,
 				9F2941A619B47DA200D68CF7 /* series.json */,
+				9FF2641519B6F6A400279DFA /* models.json */,
 				9F5DCA1419B0ABE3007AF905 /* Core Data Model */,
 				9F5DC9F219B0AB51007AF905 /* main.m */,
 				9F5DC9F919B0AB51007AF905 /* MasterData.1 */,
@@ -159,6 +165,14 @@
 				9F1BEF9E19B5783F00F5C0FF /* Components.m */,
 			);
 			name = "Core Data Model";
+			sourceTree = "<group>";
+		};
+		9FB2C97419B57C1B0034631A /* Database Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FB2C97519B57C980034631A /* schema.sql */,
+			);
+			name = "Database Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
