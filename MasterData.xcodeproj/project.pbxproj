@@ -22,7 +22,6 @@
 		9F5DC9FA19B0AB51007AF905 /* MasterData.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9F5DC9F919B0AB51007AF905 /* MasterData.1 */; };
 		9F5DCA6519B1ACBF007AF905 /* brands.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9F5DCA6219B1AC2A007AF905 /* brands.json */; };
 		9FF2641619B6F77600279DFA /* models.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FF2641519B6F6A400279DFA /* models.json */; };
-		E17423FDA8354D3587D083B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AE20243FDB44BCA9A1C0F6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,7 +86,6 @@
 			files = (
 				9F5DC9EE19B0AB51007AF905 /* CoreData.framework in Frameworks */,
 				9F5DC9F019B0AB51007AF905 /* Foundation.framework in Frameworks */,
-				E17423FDA8354D3587D083B4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

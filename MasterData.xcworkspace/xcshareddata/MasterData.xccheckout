@@ -10,33 +10,33 @@
 	<string>MasterData</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>07D29E91-0AF2-4F2A-A775-663F1AD552D2</key>
-		<string>https://github.com/kennethsun/carusage.git</string>
-		<key>E955FEF1-3853-47A5-86AE-B6B8DB0AFAE4</key>
+		<key>1A938AD0E91E72F6A834CDE54CA2CEAFE5F26888</key>
 		<string>https://github.com/kennethsun/masterdata.git</string>
+		<key>5BEECB8FE2C5798E83C9AADBDFC4474B1A3E66D3</key>
+		<string>https://github.com/kennethsun/carusage.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MasterData.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>07D29E91-0AF2-4F2A-A775-663F1AD552D2</key>
-		<string>../../carusage</string>
-		<key>E955FEF1-3853-47A5-86AE-B6B8DB0AFAE4</key>
+		<key>1A938AD0E91E72F6A834CDE54CA2CEAFE5F26888</key>
 		<string>..</string>
+		<key>5BEECB8FE2C5798E83C9AADBDFC4474B1A3E66D3</key>
+		<string>../../carusage</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/kennethsun/masterdata.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E955FEF1-3853-47A5-86AE-B6B8DB0AFAE4</string>
+	<string>1A938AD0E91E72F6A834CDE54CA2CEAFE5F26888</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>07D29E91-0AF2-4F2A-A775-663F1AD552D2</string>
+			<string>5BEECB8FE2C5798E83C9AADBDFC4474B1A3E66D3</string>
 			<key>IDESourceControlWCCName</key>
 			<string>carusage</string>
 		</dict>
@@ -44,7 +44,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E955FEF1-3853-47A5-86AE-B6B8DB0AFAE4</string>
+			<string>1A938AD0E91E72F6A834CDE54CA2CEAFE5F26888</string>
 			<key>IDESourceControlWCCName</key>
 			<string>masterdata</string>
 		</dict>

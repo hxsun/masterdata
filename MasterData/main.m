@@ -186,8 +186,14 @@ static void prepareModels(NSManagedObjectContext *context) {
         model.name = [obj objectForKey:@"name"];
         model.engine = [obj objectForKey:@"engine"];
         model.driveType = [obj objectForKey:@"driveType"];
+        model.warranty = [obj objectForKey:@"warranty"];
+        
+        model.carStructure = [obj objectForKey:@"carStructure"];
         model.onsale = [NSNumber numberWithBool:[[obj objectForKey:@"onsale"] boolValue]];
-        model.publishedYear = [NSDate dateWithString:[obj objectForKey:@"publishedYear"]];
+        
+        NSDateFormatter *df = [NSDateFormatter new];
+        [df setDateFormat:@"yyyy-MM-dd"];
+        model.publishedYear = [df dateFromString:[obj objectForKey:@"publishedYear"]];
         model.transmissionType = [obj objectForKey:@"transmissionType"];
         
         // NSInteger seriesId = [[obj objectForKey:@"seriesId"] integerValue];
