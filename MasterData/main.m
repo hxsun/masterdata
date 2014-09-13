@@ -9,6 +9,10 @@
 #import "Brands.h"
 #import "Series.h"
 #import "Models.h"
+#import "Components.h"
+#import "ComponentEntry.h"
+#import "OfficialPackage.h"
+#import "PackageComponentEntry.h"
 
 
 static NSManagedObjectModel *managedObjectModel()
@@ -217,6 +221,144 @@ static void prepareModels(NSManagedObjectContext *context) {
 
 }
 
+static long binaryStringToInt(NSString *binaryString)
+{
+    unichar aChar;
+    long value = 0;
+    int index;
+    for (index = 0; index<[binaryString length]; index++)
+    {
+        aChar = [binaryString characterAtIndex: index];
+        if (aChar == '1')
+            value += 1;
+        if (index+1 < [binaryString length])
+            value = value<<1;
+    }
+    return value;
+}
+
+static void prepareOfficialPackage(NSManagedObjectContext *context) {
+    DLog(@"Deleting all records in PackageComponentEntry and OfficialPackage.");
+    deleteAllObjects(@"PackageComponentEntry", context);
+    deleteAllObjects(@"OfficialPackage", context);
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        DLog(@"Error while saving %@", ([error localizedDescription] != nil) ? [error localizedDescription] : @"Unknown Error");
+    }
+    NSError *err = nil;
+    
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"officialPackage" ofType:@"json"];
+    NSArray *officialPackages = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
+                                                                options:kNilOptions
+                                                                  error:&err];
+    DLog(@"Importing offcialPackages: %@", officialPackages);
+    [officialPackages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        OfficialPackage *opack = nil;
+        
+        // Search for existing official package;
+        NSPredicate *oPackPredicate = [NSPredicate predicateWithFormat:@"%K = %@", @"id", [obj objectForKey:@"id"]];
+        NSFetchRequest *oPackRequest = [NSFetchRequest new];
+        [oPackRequest setPredicate:oPackPredicate];
+        NSEntityDescription *oPackDescription = [NSEntityDescription entityForName:@"OfficialPackage"
+                                                            inManagedObjectContext:context];
+        [oPackRequest setEntity:oPackDescription];
+        opack = [[context executeFetchRequest:oPackRequest error:nil] lastObject];
+        if (!opack) {
+            opack = [NSEntityDescription insertNewObjectForEntityForName:@"OfficialPackage"
+                                                  inManagedObjectContext:context];
+        }
+        
+        // Search for the model;
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"id", [obj objectForKey:@"modelId"]];
+        NSFetchRequest *request = [NSFetchRequest new];
+        [request setPredicate:predicate];
+        NSEntityDescription *modelDesc = [NSEntityDescription entityForName:@"Models" inManagedObjectContext:context];
+        [request setEntity:modelDesc];
+        Models *selectedModels = [[context executeFetchRequest:request error:nil] firstObject];
+        selectedModels.hasPackage = opack;
+
+        opack.name = [obj objectForKey:@"name"];
+        opack.officialSchedule = [obj objectForKey:@"officialSchedule"];
+        opack.id = [NSNumber numberWithInteger:[[obj objectForKey:@"id"] integerValue]];
+        NSError *error;
+        if (![context save:&error]) {
+            DLog(@"Whoops, couldnot save: %@", [error localizedDescription]);
+        }
+    }];
+    
+    dataPath = [[NSBundle mainBundle] pathForResource:@"packageComponentEntry" ofType:@"json"];
+    NSArray *packageComponentEntries = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
+                                                                options:kNilOptions
+                                                                  error:&err];
+    [packageComponentEntries enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        PackageComponentEntry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"PackageComponentEntry"
+                                                                     inManagedObjectContext:context];
+        entry.compMake = [obj objectForKey:@"compMake"];
+        entry.compModel = [obj objectForKey:@"compModel"];
+        entry.suggestedPrice = [NSNumber numberWithFloat:[[obj objectForKey:@"suggestedPrice"] floatValue]];
+        entry.officialSchedule = [NSNumber numberWithLong:(binaryStringToInt([obj objectForKey:@"officialSchedule"]))];
+        
+        // Search for the package;
+        NSPredicate *predicate1 = [NSPredicate predicateWithFormat:@"%K = %@", @"id", [obj objectForKey:@"packageId"]];
+        NSFetchRequest *request1 = [NSFetchRequest new];
+        [request1 setPredicate:predicate1];
+        NSEntityDescription *packageDesc = [NSEntityDescription entityForName:@"OfficialPackage" inManagedObjectContext:context];
+        [request1 setEntity:packageDesc];
+        OfficialPackage *selectedPackage = [[context executeFetchRequest:request1 error:nil] firstObject];
+        entry.belongsToPackage = selectedPackage;
+        
+        // Search for the component;
+        NSPredicate *predicate2 = [NSPredicate predicateWithFormat:@"%K = %@", @"id", [obj objectForKey:@"compId"]];
+        NSFetchRequest *request2 = [NSFetchRequest new];
+        [request2 setPredicate:predicate2];
+        NSEntityDescription *componentDesc = [NSEntityDescription entityForName:@"Components" inManagedObjectContext:context];
+        [request2 setEntity:componentDesc];
+        Components *selectedComponent = [[context executeFetchRequest:request2 error:nil] firstObject];
+        entry.compType = selectedComponent;
+        
+        NSError *error;
+        if (![context save:&error]) {
+            DLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        
+    }];
+    
+    
+    // Initial all component entries for one package.
+}
+
+static void prepareComponents(NSManagedObjectContext *context) {
+    DLog(@"Deleting all records in COMPONENTS");
+    deleteAllObjects(@"Components", context);
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        DLog(@"Error while saving %@", ([error localizedDescription] != nil) ? [error localizedDescription] : @"Unknown Error");
+    }
+    
+    NSError *err = nil;
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"components" ofType:@"json"];
+    NSArray *components = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath] options:kNilOptions error:&err];
+    DLog(@"Importing components: %@", components);
+    [components enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        Components *component = [NSEntityDescription insertNewObjectForEntityForName:@"Components"
+                                                              inManagedObjectContext:context];
+        component.id = [NSNumber numberWithInteger:[[obj objectForKey:@"id"] integerValue]];
+        
+        component.name = [obj objectForKey:@"name"];
+        component.compDescription = [obj objectForKey:@"description"];
+        component.comment = [obj objectForKey:@"comment"];
+        component.image = [obj objectForKey:@"image"];
+        NSError *error;
+        if (![context save:&error]) {
+            DLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+    }];
+}
+
+
+
 
 int main(int argc, const char * argv[])
 {
@@ -232,6 +374,10 @@ int main(int argc, const char * argv[])
         prepareSeries(context);
         
         prepareModels(context);
+        
+        prepareComponents(context);
+        
+        prepareOfficialPackage(context);
         
         /*
         NSError *reseterror = nil;
